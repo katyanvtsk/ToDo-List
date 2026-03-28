@@ -1,0 +1,111 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.done {
+  text-decoration: line-through;
+}
+
+.tasks-list {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.task {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+input {
+  padding: 6px 10px;
+  font-size: 16px;
+  border: 2px solid #e0e0e0;
+  border-radius: 8px;
+  outline: none;
+}
+
+input:focus {
+  border-color: #4c9aff;
+}
+
+.errorText {
+  color: red;
+  margin-top: 10px;
+  width: 100%;
+  text-align: center;
+}
+
+.input-container input {
+  margin-right: 10px;
+}
+
+.button {
+  display: flex;
+
+  gap: 10px;
+  margin: 20px auto 0 auto;
+}
+
+button {
+  padding: 8px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: inherit;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  background-color: #f0f0f0;
+  color: #666;
+  outline: none;
+}
+
+button:hover {
+  transform: translateY(-1px);
+  background-color: #c5e8ff;
+}
+
+.button__all {
+  background-color: #e3f2fd;
+  color: #1976d2;
+}
+
+.button__all:hover {
+  background-color: #bbdef5;
+}
+
+.button__active {
+  background-color: #e8f5e9;
+  color: #388e3c;
+}
+
+.button__active:hover {
+  background-color: #c8e6c9;
+}
+
+.button__completed {
+  background-color: #fce4ec;
+  color: #c2185b;
+}
+
+.button__completed:hover {
+  background-color: #f8bbd0;
+}
+
+button.active {
+  border: 2px solid #094786;
+}
+
+.count-container {
+  display: flex;
+  gap: 20px;
+  margin: 20px auto 0 auto;
+}
