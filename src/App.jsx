@@ -6,15 +6,10 @@ import TodoList from "./TodoList";
 import CountTask from "./CountTask";
 
 function App() {
-  const [tasks, setTasks] = useState([]);
-  const savedTasks = localStorage.getItem("tasks");
-
-  useEffect(() => {
-    console.log("Загрузка из localStorage:");
-    if (savedTasks) {
-      setTasks(JSON.parse(savedTasks));
-    }
-  }, []);
+  const [tasks, setTasks] = useState(() => {
+    const savedTasks = localStorage.getItem("tasks");
+    return savedTasks ? JSON.parse(savedTasks) : [];
+  });
 
   useEffect(() => {
     console.log("загружаем в localStorage:");
@@ -48,7 +43,7 @@ function App() {
   }, []);
 
   const clearTasks = useCallback(() => {
-    setTasks((tasks) => tasks.filter((item) => item.isDone === false));
+    setTasks((tasks) => tasks.filter((item) => !item.isDone));
   }, []);
 
   return (

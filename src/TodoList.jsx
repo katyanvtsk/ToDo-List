@@ -8,9 +8,9 @@ const TodoList = ({ tasks, deleteTask, isDoneCheck, editTask }) => {
 
   const filteredTask = tasks.filter((item) => {
     if (filter === "active") {
-      return item.isDone === false;
+      return !item.isDone;
     } else if (filter === "completed") {
-      return item.isDone === true;
+      return item.isDone;
     }
     return true;
   });

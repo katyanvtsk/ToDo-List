@@ -2,7 +2,7 @@ import { useState, memo } from "react";
 
 const CountTask = ({ tasks, clearTasks }) => {
   console.log("render CountTask");
-  const notIsDone = tasks.filter((item) => item.isDone === false);
+  const notIsDone = tasks.filter((item) => !item.isDone);
   const count = notIsDone.length;
 
   return (
