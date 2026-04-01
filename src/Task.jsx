@@ -9,21 +9,20 @@ const Task = ({ task, deleteTask, isDoneCheck, editTask }) => {
 
   const handleSave = () => {
     const trimText = textEdit.trim();
-    if (trimText === "") {
-      setError(true);
+    if (!trimText) {
+      setError(!trimText);
       return;
     }
     if (trimText !== task.title) {
       editTask(task.id, trimText);
     }
-    setIsEdit(false);
-    setError(false);
+    setIsEdit(!isEdit);
+    setError(!trimText);
   };
 
   const handleCancel = () => {
     setTextEdit(task.title);
-    setIsEdit(false);
-    setError(false);
+    setIsEdit(!isEdit);
   };
 
   const handleKeydown = (e) => {
@@ -36,7 +35,7 @@ const Task = ({ task, deleteTask, isDoneCheck, editTask }) => {
   };
 
   const handleEdit = () => {
-    setIsEdit(true);
+    setIsEdit(!isEdit);
   };
 
   const handleMain = () => {
